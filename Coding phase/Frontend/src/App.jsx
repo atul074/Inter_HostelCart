@@ -12,6 +12,8 @@ import Deal from './pages/Deal';
 import AddItem from './Components/AddItem';
 import Profile from './Components/Profile';
 import Login from './Components/Login';
+import Signup from './Components/Signup';
+import Mycart from './pages/Mycart';
 function App() {
   return (
     <Router>
@@ -26,7 +28,15 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/mens" element={<UnifiedSection gender="male" />} />
           <Route path="/womens" element={<UnifiedSection gender="female" />} />
+          <Route path="/electronics" element={<UnifiedSection tag="electronics" />} />
+          <Route path="/accessories" element={<UnifiedSection tag="accessories" />} />
+          <Route path="/stationary" element={<UnifiedSection tag="stationary" />} />
+          <Route path="/vehicle" element={<UnifiedSection tag="vehicle" />} />
+          <Route path="/sport" element={<UnifiedSection tag="sport" />} />
+          <Route path="/medicine" element={<UnifiedSection tag="medicine" />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/mycart" element={<Mycart />} />
         </Routes>
       </Layout>
     </Router>

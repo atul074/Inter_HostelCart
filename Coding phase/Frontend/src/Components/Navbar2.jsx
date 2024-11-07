@@ -2,12 +2,27 @@ import React from 'react';
 import { Search, ShoppingCart, ChevronDown } from 'lucide-react';
 import  { useState } from 'react';
 import { NavLink,Link } from 'react-router-dom';
+import { useNavigate } from "react-router";
+import Cookies from 'js-cookie';
 const Navbar = () => {
 
     const [showMenu, setShowMenu] = useState(false);
+    const navigate = useNavigate();
+  const token = Cookies.get("token");
 
   const handleMenuToggle = () => {
     setShowMenu(!showMenu);
+  };
+  
+  const handleSelectChange = (event) => {
+    const selectedPage = event.target.value;
+    if (selectedPage) {
+      navigate(selectedPage); // Navigate to the selected page
+    }
+  };
+  const handleLogout = () => {
+    Cookies.remove("token");
+    navigate("/login");
   };
 return (
     <nav className="bg-white">
@@ -31,10 +46,16 @@ return (
                     </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <Link to="/login" className="flex items-center hover:text-gray-600">
-                       Login <ChevronDown className="w-4 h-4 ml-1" />
-                    </Link>
-                    <Link to="/orders" className="flex items-center hover:text-gray-600">
+                {token ? (
+              <button onClick={handleLogout} className="flex items-center hover:text-gray-600">
+                Logout <ChevronDown className="w-4 h-4 ml-1" />
+              </button>
+            ) : (
+              <Link to="/login" className="flex items-center hover:text-gray-600">
+                Login <ChevronDown className="w-4 h-4 ml-1" />
+              </Link>
+            )}
+                    <Link to="/mycart" className="flex items-center hover:text-gray-600">
         <ShoppingCart className="w-5 h-5 mr-1" />
         MY CART:
         <span className="font-bold ml-1">₹0.00</span>
@@ -80,6 +101,14 @@ return (
                 Payment
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/orders"
+                className="block py-2 px-4 hover:bg-gray-100"
+              >
+                Orders
+              </NavLink>
+            </li>
           </ul>
         </div>
       )}
@@ -94,14 +123,18 @@ return (
                 </div>
                 <div className="flex space-x-6 items-center ml-6">
                     <Link to="/" className="hover:text-gray-600">HOME</Link>
-                  
-                    <Link to="/womens" className="hover:text-gray-600 flex items-center">
-                        WOMEN <ChevronDown className="w-4 h-4 ml-1" />
-                    </Link>
-                    <Link to="/mens" className="hover:text-gray-600 flex items-center">
-                        MEN <ChevronDown className="w-4 h-4 ml-1" />
-                    </Link>
-                    <Link to="/deal" className="hover:text-gray-600">SALES</Link>
+                    <select name="collection" className=" bg-gray-700" onChange={handleSelectChange} defaultValue="" >
+                    <option value="">Clothing</option>
+                      <option value="/mens" >MEN</option>
+                      <option value="/womens"  >WOMEN</option>
+                   </select>
+                    
+                    <Link to="/electronics" className="hover:text-gray-600">Electronics</Link>
+                    <Link to="/stationary" className="hover:text-gray-600">Stationary</Link>
+                    <Link to="/vehicle" className="hover:text-gray-600">Vehicle</Link>
+                    <Link to="/sport" className="hover:text-gray-600">Sport</Link>
+                    <Link to="/medicine" className="hover:text-gray-600">Medicine</Link>
+                    <Link to="/accessories" className="hover:text-gray-600">Accessories</Link>
                   
                   
                 </div>
