@@ -65,7 +65,9 @@ const itemController = {
   },
   getItemById:(req,res)=>{
       const id=req.params;
-     // console.log("yes",id);
+
+      // console.log("yes",id);
+
       
        Item.getById(id.id,(err,result)=>{
         if(err){
