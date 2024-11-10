@@ -77,6 +77,7 @@ const itemController = {
         res.send(result);
       })
   },
+
   removeItem:(req,res)=>{
     const id=req.params;
     Item.removeById(id.id,(err,result)=>{
@@ -86,6 +87,18 @@ const itemController = {
       }
       res.status(201).json({ message: 'Item removed successfully'});
     })
+  },
+  reportItem: (req, res) => {
+    const { itemId } = req.body;
+
+    Item.reportItem(itemId, (err, result) => {
+      if (err) {
+        console.error('Error reporting item:', err);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
+      res.status(200).json(result);
+    });
+
   }
 };
 

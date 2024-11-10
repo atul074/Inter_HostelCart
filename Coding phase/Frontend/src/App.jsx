@@ -19,8 +19,8 @@ import AdminDashboard from './pages/AdminDashboard';
 
 import Myitem from './Components/Myitem';
 
-import Chat from './pages/Chat';
 
+// import Chat from './pages/Chat';
 function App() {
   return (
     <Router>
@@ -47,7 +47,9 @@ function App() {
           <Route path="/item/:itemid" element={<Item />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/myitem" element={<Myitem />} />
-          <Route path="/chat" element={<Chat />} />
+
+          {/* <Route path="/chat" element={<Chat />} /> */}
+
         </Routes>
       </Layout>
     </Router>
