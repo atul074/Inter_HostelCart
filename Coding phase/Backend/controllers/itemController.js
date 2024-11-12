@@ -66,7 +66,8 @@ const itemController = {
   getItemById:(req,res)=>{
       const id=req.params;
 
-      // console.log("yes",id);
+
+     // console.log("yes",id);
 
       
        Item.getById(id.id,(err,result)=>{
@@ -77,7 +78,6 @@ const itemController = {
         res.send(result);
       })
   },
-
   removeItem:(req,res)=>{
     const id=req.params;
     Item.removeById(id.id,(err,result)=>{
@@ -99,6 +99,16 @@ const itemController = {
       res.status(200).json(result);
     });
 
+  },
+  removeItem:(req,res)=>{
+    const id=req.params;
+    Item.removeById(id.id,(err,result)=>{
+      if(err){
+        console.error('Error executing query:', err);
+        return res.status(500).json({ error: err.message });
+      }
+      res.status(201).json({ message: 'Item removed successfully'});
+    })
   }
 };
 

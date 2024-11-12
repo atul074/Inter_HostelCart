@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { useSelector } from 'react-redux';
 import Layout from './Components/Layout'; 
 import UnifiedSection from './Components/UnifiedSection';
-import MenBannerlist from './json/mensItems';
-import WomenBannerlist from './json/womensItems';
 import Payment from './Components/Payment'
 import Home from './pages/Home'; 
 import MyShop from './pages/MyShop'; 
@@ -17,11 +15,9 @@ import Signup from './Components/Signup';
 import Mycart from './pages/Mycart';
 import Item from './pages/Item';
 import AdminDashboard from './pages/AdminDashboard';
-
+import Auction from './pages/Auction';
 import Myitem from './Components/Myitem';
 
-
-// import Chat from './pages/Chat';
 function App() {
 
 
@@ -50,10 +46,8 @@ function App() {
           <Route path="/mycart" element={<Mycart />} />
           <Route path="/item/:itemid" element={<Item />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/auction" element={<Auction />} />
           <Route path="/myitem" element={<Myitem />} />
-
-          {/* <Route path="/chat" element={<Chat />} /> */}
-
         </Routes>
       </Layout>
     </Router>

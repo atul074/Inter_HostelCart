@@ -64,6 +64,7 @@ INSERT INTO item (sellerID,itemName,itemPrice,itemDescription,itemTags,listingDa
 	 (1,'testa cokaskcascj aclaksa',454,'dadawdadszdsdca','adad','2024-09-24',false,0,'https://firebasestorage.googleapis.com/v0/b/interhostel-cart.appspot.com/o/images%2Fdeadpool-vs-wolverine-yellow-background-desktop-wallpaper-4k.jpg?alt=media&token=36ceee2d-7051-421a-9b29-16ac2bb191f2','he'),
 	 (1,'pen',10,'pen hahaha','pen','2024-09-24',false,0,'https://firebasestorage.googleapis.com/v0/b/interhostel-cart.appspot.com/o/images%2Fretro-spike-spiegel-cityscape-cowboy-bebop-desktop-wallpaper-4k.jpg?alt=media&token=5db8a8db-55e6-4fcc-aadd-bd6d2e27ac5b','he');
 
+
 INSERT INTO item (sellerID, itemName, itemPrice, itemDescription, itemTags, listingDate, reportflag, itemVisit, itemPhotoURL, gender) VALUES
 (1, 'Laptop', 20000, '8 months old, black color, excellent condition', 'Electronics', '2024-03-04', false, 1, 'https://cdn.thewirecutter.com/wp-content/media/2023/06/bestlaptops-2048px-9765.jpg', 'he'),
 (2, 'Smartphone', 5000, '6 months old, silver color, very good condition', 'Electronics', '2024-04-03', false, 2, 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQjKGU9iHKHgexdIrZ7-oeBH5gkher22P8xNbx_7bfleTnQWfX30x_O8RfiiuM8kAJeTaEzebqN7kVdj7Jmi6KGj9mTkOTrOS6cLDIoC1A', 'he'),
@@ -116,5 +117,11 @@ INSERT INTO item (sellerID, itemName, itemPrice, itemDescription, itemTags, list
 (8, 'Handbag', 1000, '5 months old, black color, great condition, stylish and spacious', 'Accessories', '2024-02-18', false, 8, 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ8SzlL4-mVXM2_9SiNbhl9CjqYZSJljDXmnjTZg9fXtSmOkZG4vmPlAYyKAwNxG1rNi0hNHTlDufxLJ9Edu_a7djAdx1k4u2Cza6_QoGvhLhYaYcBXCAvzFw', 'she'),
 (9, 'Gloves', 300, '7 months old, black color, very good condition, lightly used for winter', 'Accessories', '2024-03-10', false, 9, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRspEG59vgEM-iBRiOkN0w9z-A-cRndRJSNbQ&s', 'he'),
 (10, 'Keychain', 150, '2 months old, silver color, excellent condition, hardly used, stylish', 'Accessories', '2024-04-01', false, 10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdOlWpuqDnLErhaPJABBrOuCZcvij7H5CRyQ&s', 'he');
+
+
+
+
+ (home page search product, footer animation, redirect to product from home page)
+
 	
 select * from item;
