@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import donation from '../../config/donation.json'
 const Donation = () => {
     const [items, setItems] = useState([]);
     const navigate = useNavigate();
     const fetchItems = async () => {
         try {
-          const response = await axios.get('http://localhost:3001/api/items');
-          const allItems = response.data.rows || [];
+          //const response = await axios.get('http://localhost:3001/api/items');
+          //const allItems = response.data.rows || [];
         //  const atul = allItems.filter(item => item.itemtags ==='donation');
-          setItems(allItems);
+          setItems(donation);
           
         } catch (error) {
           console.error('Error fetching items:', error);
@@ -22,8 +23,8 @@ const Donation = () => {
           fetchItems();
        
     }, []);  
-    const handleDivClick = (itemid) => {
-        navigate(`/item/${itemid}`); // Navigate to (`/other/${userId}`); route
+    const handleDivClick = () => {
+        alert('you request to get item is noted');
       };
 
   return (
@@ -37,7 +38,7 @@ const Donation = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
         {items.map((item) => (
           <div
-            key={item.itemno}
+           
             className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105"
         
           >
@@ -54,7 +55,7 @@ const Donation = () => {
               </h2>
               <p className="text-gray-600 mb-4">{item.itemdescription}</p>
               <button className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300"
-                onClick={() => handleDivClick(item.itemno)}
+                 onClick={() => handleDivClick()}
               >
                 Get the Item
               </button>
